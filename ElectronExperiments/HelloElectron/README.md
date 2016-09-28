@@ -1,7 +1,7 @@
 ## Run on mac/Linux
 
-> npm run start-linux
+> npm run linux
 
 ## Run on Windows
 
-> npm run start-windows
+> npm run windows
