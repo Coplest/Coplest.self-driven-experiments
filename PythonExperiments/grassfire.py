@@ -19,10 +19,13 @@ world[world_end_x][world_end_y] = 0
 
 distance = 0
 twoWays = False
+
 while True:
     
+    # Loop into array
     for x in range(0, world_rows):
         for y in range(0, world_cols):
+            # If actual position is initial point verify if has two ways to complete path
             if(world[x][y] == "+"):
                 try:
                     if(world[x + 1][y] != "-" and world[x][y + 1] != "-"):
@@ -44,7 +47,9 @@ while True:
                         twoWays = True
                 except IndexError:
                     pass
-            if(world[x][y] == distance):
+            # If actual position is same as distance            
+            elif(world[x][y] == distance):
+                # try to set distance with siblings
                 try:
                     if(world[x + 1][y] == "-"):
                         world[x + 1][y] = distance + 1
@@ -59,6 +64,7 @@ while True:
                     pass
         
     distance = distance + 1
+    
     if(twoWays == True):
         break
 
