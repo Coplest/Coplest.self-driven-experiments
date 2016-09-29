@@ -18,7 +18,7 @@ world_end_y = 4
 world[world_end_x][world_end_y] = 0 
 
 distance = 0
-while (distance < 1):
+while True:
    distance = distance + 1
    
    world[world_end_x + distance][world_end_y] = distance
@@ -26,6 +26,9 @@ while (distance < 1):
 
    world[world_end_x][world_end_y + distance] = distance
    world[world_end_x][world_end_y - distance] = distance
+
+   if(distance == 1):
+       break
 
 # printing world
 for x in range(0, world_rows):
