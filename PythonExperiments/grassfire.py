@@ -29,16 +29,16 @@ while True:
                     if(world[x - 1][y] == "-"):
                         world[x - 1][y] = distance + 1
 
-                    if(world[x][y + 1]):
+                    if(world[x][y + 1] == "-"):
                         world[x][y + 1] = distance + 1
-                    if(world[x][y - 1]):
+                    if(world[x][y - 1] == "-"):
                         world[x][y - 1] = distance + 1
                 except IndexError:
                     pass
         
     distance = distance + 1
 
-    if(distance == 3):
+    if(distance == 4):
         break
 
 # printing world
