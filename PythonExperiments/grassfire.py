@@ -18,10 +18,32 @@ world_end_y = 4
 world[world_end_x][world_end_y] = 0 
 
 distance = 0
+twoWays = False
 while True:
-
+    
     for x in range(0, world_rows):
         for y in range(0, world_cols):
+            if(world[x][y] == "+"):
+                try:
+                    if(world[x + 1][y] != "-" and world[x][y + 1] != "-"):
+                        twoWays = True
+                except IndexError:
+                    pass
+                try:
+                    if(world[x - 1][y] != "-" and world[x][y + 1] != "-"):
+                        twoWays = True
+                except IndexError:
+                    pass
+                try:
+                    if(world[x + 1][y] != "-" and world[x][y - 1] != "-"):
+                        twoWays = True
+                except IndexError:
+                    pass
+                try:
+                    if(world[x - 1][y] != "-" and world[x][y - 1] != "-"):
+                        twoWays = True
+                except IndexError:
+                    pass
             if(world[x][y] == distance):
                 try:
                     if(world[x + 1][y] == "-"):
@@ -37,8 +59,7 @@ while True:
                     pass
         
     distance = distance + 1
-
-    if(distance == 4):
+    if(twoWays == True):
         break
 
 # printing world
