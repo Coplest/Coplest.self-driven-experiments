@@ -15,7 +15,20 @@ world[world_start_x][world_start_y] = "+"
 # setting end point
 world_end_x = 5
 world_end_y = 4
-world[world_end_x][world_end_y] = 0 
+world[world_end_x][world_end_y] = 0
+
+# setting an obstacles
+world_obstacle_x = 2
+world_obstacle_y = 3
+world[world_obstacle_x][world_obstacle_y] = "."
+
+world_obstacle_x = 3
+world_obstacle_y = 3
+world[world_obstacle_x][world_obstacle_y] = "."
+
+world_obstacle_x = 4
+world_obstacle_y = 3
+world[world_obstacle_x][world_obstacle_y] = "."
 
 distance = 0
 twoWays = False
@@ -64,7 +77,7 @@ while True:
                     pass
         
     distance = distance + 1
-    
+
     if(twoWays == True):
         break
 
