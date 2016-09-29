@@ -19,16 +19,27 @@ world[world_end_x][world_end_y] = 0
 
 distance = 0
 while True:
-   distance = distance + 1
-   
-   world[world_end_x + distance][world_end_y] = distance
-   world[world_end_x - distance][world_end_y] = distance
 
-   world[world_end_x][world_end_y + distance] = distance
-   world[world_end_x][world_end_y - distance] = distance
+    for x in range(0, world_rows):
+        for y in range(0, world_cols):
+            if(world[x][y] == distance):
+                try:
+                    if(world[x + 1][y] == "-"):
+                        world[x + 1][y] = distance + 1
+                    if(world[x - 1][y] == "-"):
+                        world[x - 1][y] = distance + 1
 
-   if(distance == 1):
-       break
+                    if(world[x][y + 1]):
+                        world[x][y + 1] = distance + 1
+                    if(world[x][y - 1]):
+                        world[x][y - 1] = distance + 1
+                except IndexError:
+                    pass
+        
+    distance = distance + 1
+
+    if(distance == 3):
+        break
 
 # printing world
 for x in range(0, world_rows):
