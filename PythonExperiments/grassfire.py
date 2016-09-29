@@ -87,4 +87,8 @@ for x in range(0, world_rows):
         print(world[x][y], end="  ")
     print("\n")
 
+# Now we know max_distance with distance value
+max_distance = distance
+print(max_distance)
+
 #print(world)
