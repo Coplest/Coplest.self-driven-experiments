@@ -1,3 +1,5 @@
+from find import paths
+
 world_rows = 7
 world_cols = 6
 
@@ -89,6 +91,6 @@ for x in range(0, world_rows):
 
 # Now we know max_distance with distance value
 max_distance = distance
-print(max_distance)
+print("max_distance: ", max_distance)
 
 #print(world)
